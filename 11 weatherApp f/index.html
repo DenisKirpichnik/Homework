@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/minty/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <!-- My favorite library in the world JQUERY-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <meta charset="utf-8">
+  <title>weatherApp</title>
+</head>
+
+<body>
+
+  <!-- Autocomplete location search input -->
+
+
+
+
+
+
+
+
+  <div class="main__wrapper">
+    <div class="cityinput__container">
+      <input type="text" class="form-control" id="search_input" placeholder="Type the city" />
+      <input type="hidden" id="loc_lat" />
+      <input type="hidden" id="loc_long" />
+      <input type="hidden" id="latitude_input" />
+      <input type="hidden" id="longitude_input" />
+      <button type="submit" id="getWeather__btn">get the weather </button>
+    </div>
+    <!-- Table  -->
+    <div class="table__container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Temperature (Celsium)</th>
+            <th scope="col">Weather description</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+          <!--JS magic happens here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyC4RjQvK8Hnp65hjd8qr19JqDU8KKvYIQQ">
+  </script>
+
+</body>
+
+</html>
