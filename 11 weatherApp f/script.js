@@ -1,7 +1,8 @@
-//let input = document.getElementById("autocomplete");
 let button = document.getElementById("getWeather__btn");
 let date1 = document.getElementById("date1");
 let tbody = document.getElementById("tbody");
+let latitude = document.getElementById("loc_lat")
+let longitude = document.getElementById("loc_long")
 
 /* Autocomplete start */
 var searchInput = "search_input";
@@ -9,8 +10,7 @@ var searchInput = "search_input";
 $(document).ready(function () {
   var autocomplete;
   autocomplete = new google.maps.places.Autocomplete(
-    document.getElementById(searchInput),
-    {
+    document.getElementById(searchInput), {
       types: ["geocode"],
     }
   );
@@ -42,12 +42,12 @@ function append(parent, el) {
 button.addEventListener("click", (e) => {
   e.preventDefault();
   fetch(
-    `https://api.weatherbit.io/v2.0/forecast/daily?&lat=${
-      document.getElementById("loc_lat").value
+      `https://api.weatherbit.io/v2.0/forecast/daily?&lat=${
+        latitude.value
     }&lon=${
-      document.getElementById("loc_long").value
+      longitude.value
     }&key=5efa8de470284fe78c54f6c6999c1593 `
-  )
+    )
     .then((response) => response.json())
     .then(function (data) {
       var data = data.data.slice(0, 7);
