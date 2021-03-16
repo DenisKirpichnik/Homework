@@ -7,11 +7,11 @@ let output = document.getElementById("output");
 var now = moment();
 console.log(now)
 var localOffset = now.utcOffset();
-console.log(now.tz("Asia/Vladivostok")); // your time zone, not necessarily the server's
+now.tz("Asia/Vladivostok"); // your time zone, not necessarily the server's
 var centralOffset = now.utcOffset();
-var diffInMinutes = localOffset - centralOffset;
-console.log(diffInMinutes)
-
+let diffInMinutes = localOffset - centralOffset;
+let diffInHours = Math.abs(diffInMinutes / 60)
+console.log(diffInHours)
 
 
 
