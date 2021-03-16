@@ -3,6 +3,18 @@ let end = document.getElementById("time_end");
 let btn = document.getElementById("btn");
 let output = document.getElementById("output");
 
+
+var now = moment();
+console.log(now)
+var localOffset = now.utcOffset();
+console.log(now.tz("Asia/Vladivostok")); // your time zone, not necessarily the server's
+var centralOffset = now.utcOffset();
+var diffInMinutes = localOffset - centralOffset;
+console.log(diffInMinutes)
+
+
+
+
 btn.addEventListener("click", (e) => {
     e.preventDefault();
     console.log(typeof start.value)
