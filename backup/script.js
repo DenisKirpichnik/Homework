@@ -9,12 +9,12 @@ let buttons = document.querySelectorAll(".btn__numbers button");
 let operators = document.querySelectorAll(".btn__operators button");
 let equal = document.getElementById("Equal_op");
 let resultDisplay = false;
-/// adding click handler about number buttons
-console.log("this is the buttons", buttons);
+/// adding click handler to number buttons
+
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", (e) => {
     let inputString = input.value;
-    console.log("test ", e.target.value);
+
     let lastchar = inputString[inputString.length - 1];
     if (resultDisplay === false) {
       input.value += e.target.value;
@@ -36,7 +36,7 @@ for (let i = 0; i < buttons.length; i++) {
     }
   });
 }
-/// adding click handler about operators  buttons
+/// adding click handler to operators  buttons
 for (let i = 0; i < operators.length; i++) {
   operators[i].addEventListener("click", (e) => {
     let inputString = input.value;

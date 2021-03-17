@@ -2,60 +2,68 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"
+    integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
+    integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous">
+  </script>
   <script src="script.js" defer></script>
-  <meta charset="utf-8">
-  <title>Calculator</title>
+  <meta charset="utf-8" />
+  <title>Bootstrap tutorial</title>
 </head>
 
 <body>
-  <div class="calculator">
-    <section class="display">
-      <div class="display__indicator" id="display__indicator">
-        <div class="calculation__block">
-          <div class="calculations__bufferContainer"> <span class="calculations__buffer"></span></div>
-          <div class="display__indicatorContainer">
-            <div class="display__values"></div>
-          </div>
+
+  <div class="wrapper">
+    <div class="display">
+      <div class="buffer__displayContainer">
+        <span class="buffer__display"></span>
+      </div>
+      <div class="currentValue__displayContainer">
+        <span class="currentValue__display"></span>
+      </div>
+    </div>
+
+
+    <div class="container keyboard">
+      <div class="row">
+        <div class="col-sm"><button class="btn__operators button " id="deleteone_op" value="←"> ←</button></div>
+        <div class="col-sm"><button class="btn__operators button" id="clearAll__op" value="CE"> CE</button></div>
+        <div class="col-sm"><button class="btn__operators button" id="clearInput__op" value="C"> C</button></div>
+        <div class="col-sm"><button class="btn__operators button" id="negateCurrOperand__op" value="+/-"> +/-</button>
         </div>
       </div>
-    </section>
-    <section class="keyboard">
-      <section class="line-1 row-4">
-        <div class="col-4-1"><button class="key operator" name="backspace"> ←</button></div>
-        <div class="col-4-1"><button class="key operator" name="resetlast"> CE</button></div>
-        <div class="col-4-1"><button class="key operator" name="reset"> C</button></div>
-        <div class="col-4-1"><button class="key operator" name="+/-"> +/-</button></div>
-      </section>
-      <section class="line-2 row-4">
-        <div class="col-4-1"><button class="key number" name="7"> 7</button></div>
-        <div class="col-4-1"><button class="key number" name="8"> 8</button></div>
-        <div class="col-4-1"><button class="key number" name="9"> 9</button></div>
-        <div class="col-4-1"><button class="key operator" name="/"> /-</button></div>
-      </section>
-      <section class="line-3 row-4">
-        <div class="col-4-1"><button class="key number" name="4"> 4</button></div>
-        <div class="col-4-1"><button class="key number" name="5"> 5</button></div>
-        <div class="col-4-1"><button class="key number" name="6"> 6</button></div>
-        <div class="col-4-1"><button class="key operator" name="*"> *</button></div>
-      </section>
-      <section class="line-4 row-4">
-        <div class="col-4-1"><button class="key number" name="1"> 1</button></div>
-        <div class="col-4-1"><button class="key number" name="2"> 2</button></div>
-        <div class="col-4-1"><button class="key number" name="3"> 3</button></div>
-        <div class="col-4-1"><button class="key operator" name="-"> -</button></div>
-      </section>
-      <section class="line-5 row-4">
-        <div class="col-4-1"><button class="key operator" name="="> =</button></div>
-        <div class="col-4-1"><button class="key number" name="0"> 0</button></div>
-        <div class="col-4-1"><button class="key operator" name="."> .</button></div>
-        <div class="col-4-1"><button class="key operator" name="+"> +</button></div>
-      </section>
-    </section>
-
+      <div class="row">
+        <div class="col-sm"><button class="btn__numbers button" value="7"> 7</button></div>
+        <div class="col-sm"><button class="btn__numbers button" value="8"> 8</button></div>
+        <div class="col-sm"><button class="btn__numbers button" value="9"> 9</button></div>
+        <div class="col-sm"><button class="btn__operators button" value="/"> /</button></div>
+      </div>
+      <div class="row">
+        <div class="col-sm"><button class="btn__numbers button" value="4"> 4</button></div>
+        <div class="col-sm"><button class="btn__numbers button" value="5"> 5</button></div>
+        <div class="col-sm"><button class="btn__numbers button" value="6"> 6</button></div>
+        <div class="col-sm"><button class="btn__operators button" value="*"> *</button></div>
+      </div>
+      <div class="row">
+        <div class="col-sm"><button class="btn__numbers button" value="1"> 1</button></div>
+        <div class="col-sm"><button class="btn__numbers button" value="2"> 2</button></div>
+        <div class="col-sm"><button class="btn__numbers button" value="3"> 3</button></div>
+        <div class="col-sm"><button class="btn__operators button" value="-"> -</button></div>
+      </div>
+      <div class="row">
+        <div class="col-sm"><button class="btn__operators button" id="equal__op" value="="> =</button></div>
+        <div class="col-sm"><button class="btn__numbers button" value="0"> 0</button></div>
+        <div class="col-sm"><button class="btn__operators button" id="decimal__op" value="."> .</button></div>
+        <div class="col-sm"><button class="btn__operators button" value="+"> +</button></div>
+      </div>
+    </div>
   </div>
+
 </body>
 
 </html>
