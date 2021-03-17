@@ -3,51 +3,59 @@
 
 <head>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <script src="script.js" defer></script>
   <meta charset="utf-8">
   <title>Calculator</title>
 </head>
 
 <body>
-
   <div class="calculator">
-
-    <input type="text" id="input" class="calculator-screen" value="" disabled />
-
-    <div class="btn__operators">
-      <button type="button" id="dOne_op" class="operator" value="delete">←</button>
-      <button type="button" id="CE_op" class="operator" value="CE">CE</button>
-      <button type="button" id="C_op" class="operator" value="C">C</button>
-      <button type="button" id="NE_op" class="operator" value="+/-">+/-</button>
-
-      <button type="button" id="Add_op" class="operator" value="+">+</button>
-      <button type="button" id="Subt_op" class="operator" value="-">-</button>
-      <button type="button" id="Mult_op" class="operator" value="*">*</button>
-      <button type="button" id="Div_op" class="operator" value="/">/</button>
-    </div>
-
-    <div class="btn__numbers">
-      <button type="button" value="7">7</button>
-      <button type="button" value="8">8</button>
-      <button type="button" value="9">9</button>
-
-
-      <button type="button" value="4">4</button>
-      <button type="button" value="5">5</button>
-      <button type="button" value="6">6</button>
-
-
-      <button type="button" value="1">1</button>
-      <button type="button" value="2">2</button>
-      <button type="button" value="3">3</button>
-      <button type="button" id="btn__zero" value="0">0</button>
-      <button type="button" class="decimal function" value=".">.</button>
-    </div>
-
-    <button type="button" id="Equal_op" class="equal-sign operator" value="=">=</button>
+    <section class="display">
+      <div class="display__indicator" id="display__indicator">
+        <div class="calculation__block">
+          <div class="calculations__bufferContainer"> <span class="calculations__buffer"></span></div>
+          <div class="display__indicatorContainer">
+            <div class="display__values"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="keyboard">
+      <section class="line-1 row-4">
+        <div class="col-4-1"><button class="key operator" name="backspace"> ←</button></div>
+        <div class="col-4-1"><button class="key operator" name="resetlast"> CE</button></div>
+        <div class="col-4-1"><button class="key operator" name="reset"> C</button></div>
+        <div class="col-4-1"><button class="key operator" name="+/-"> +/-</button></div>
+      </section>
+      <section class="line-2 row-4">
+        <div class="col-4-1"><button class="key number" name="7"> 7</button></div>
+        <div class="col-4-1"><button class="key number" name="8"> 8</button></div>
+        <div class="col-4-1"><button class="key number" name="9"> 9</button></div>
+        <div class="col-4-1"><button class="key operator" name="/"> /-</button></div>
+      </section>
+      <section class="line-3 row-4">
+        <div class="col-4-1"><button class="key number" name="4"> 4</button></div>
+        <div class="col-4-1"><button class="key number" name="5"> 5</button></div>
+        <div class="col-4-1"><button class="key number" name="6"> 6</button></div>
+        <div class="col-4-1"><button class="key operator" name="*"> *</button></div>
+      </section>
+      <section class="line-4 row-4">
+        <div class="col-4-1"><button class="key number" name="1"> 1</button></div>
+        <div class="col-4-1"><button class="key number" name="2"> 2</button></div>
+        <div class="col-4-1"><button class="key number" name="3"> 3</button></div>
+        <div class="col-4-1"><button class="key operator" name="-"> -</button></div>
+      </section>
+      <section class="line-5 row-4">
+        <div class="col-4-1"><button class="key operator" name="="> =</button></div>
+        <div class="col-4-1"><button class="key number" name="0"> 0</button></div>
+        <div class="col-4-1"><button class="key operator" name="."> .</button></div>
+        <div class="col-4-1"><button class="key operator" name="+"> +</button></div>
+      </section>
+    </section>
 
   </div>
-
 </body>
 
 </html>

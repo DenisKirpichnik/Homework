@@ -1,11 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
-  <!-- Moment library -->
-
   <meta charset="utf-8" />
   <title>Carsharing</title>
 </head>
@@ -13,8 +10,8 @@
 <body>
   <div class="mainwrapper">
     <div class="timeinput">
-      <span> From <input type="time" id="time_start" placeholder="время начала" step="3600" /></span>
-      <span> To <input type="time" id="time_end" placeholder="время конца" step="3600" /></span>
+      <span> From <input type="time" id="time_start" step="3600" /></span>
+      <span> To <input type="time" id="time_end" step="3600" /></span>
       <button id="btn" type="submit">Order</button>
     </div>
     <p id="output"></p>
@@ -22,9 +19,10 @@
       <p>THE TABLE SHOULD BE HERE</p>
     </div>
   </div>
+  <!-- Moment  -->
   <script src="lib/moment/moment.min.js"></script>
   <script src="lib/moment/moment.tz.js"></script>
-
+  <script src="script.js"></script>
 </body>
 
 </html>
