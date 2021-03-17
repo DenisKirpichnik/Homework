@@ -117,7 +117,9 @@ function calcAddSubtract(array) {
   }
   for (let i = 0; i < arr.length - 1; i++) {
     if (arr[i] == "+") {
-      let res = Number(arr[i - 1]) + Number(arr[i + 1]);
+      let res = parseFloat(Number(arr[i - 1]) + Number(arr[i + 1])).toPrecision(
+        12
+      );
       arr.splice(i - 1, 3, res);
     } else if (arr[i] == "-") {
       let res = Number(arr[i - 1]) - Number(arr[i + 1]);
@@ -137,7 +139,9 @@ function calcMultiplyDivide(array) {
       let res = (Number(arr[i - 1]) / Number(arr[i + 1])).toFixed(8);
       arr.splice(i - 1, 3, res);
     } else if (arr[i] == "*") {
-      let res = Number(arr[i - 1]) * Number(arr[i + 1]);
+      let res = parseFloat(Number(arr[i - 1]) * Number(arr[i + 1])).toPrecision(
+        12
+      );
       arr.splice(i - 1, 3, res);
     }
   }
