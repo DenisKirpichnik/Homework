@@ -26,41 +26,55 @@ for (let i = 0; i < numberBtns.length; i++) {
     })
 }
 
-//operators buttons functionality 
-for (let i = 0; i < operatorsBtns.length; i++) {
-    operatorsBtns[i].addEventListener("click", (e) => {
+//handlesequence function
+function handleSequence(e) {
+    console.log("prev-", previousO, "curr-", currentO)
+    buffer.innerText = buffer.innerText + currentV.innerText + e.target.value
 
-        if (e.target.value === "+" && !arr.includes(lastChar)) {
-            operator = "add"
-            previousO = currentV.innerText
-            currentV.innerText = null
-            buffer.innerText = buffer.innerText + previousO + e.target.value
-            setLastChar()
-        } else if (e.target.value === "-" && !arr.includes(lastChar)) {
-            operator = "subtract"
-            previousO = currentV.innerText
-            currentV.innerText = null
-            buffer.innerText = buffer.innerText + previousO + e.target.value
-            setLastChar()
-        } else if (e.target.value === "/" && !arr.includes(lastChar)) {
-            operator = "divide"
-            previousO = currentV.innerText
-            currentV.innerText = null
-            buffer.innerText = buffer.innerText + previousO + e.target.value
-            setLastChar()
-        } else if (e.target.value === "*" && !arr.includes(lastChar)) {
-            operator = "multiply"
-            previousO = currentV.innerText
-            currentV.innerText = null
-            buffer.innerText = buffer.innerText + previousO + e.target.value
-            setLastChar()
-        }
-    })
+    currentV.innerText = Number(previousO) + Number(currentV.innerText)
+    previousO = currentV.innerText
+    console.log("handleSequence was called oops")
+    setLastChar()
+
+}
+//operators buttons functionality 
+function handleOperation(e) {
+    if (arr.includes(lastChar) && currentV.innerText.length >= 1 && e.target.value === "+" || e.target.value === "-" || e.target.value === "/" || e.target.value === "*") {
+        handleSequence(e)
+    } else if (e.target.value === "+") {
+        operator = "add"
+        previousO = currentV.innerText
+        currentV.innerText = null
+        buffer.innerText = buffer.innerText + previousO + e.target.value
+        setLastChar(e.target.value)
+
+    } else if (e.target.value === "-") {
+        operator = "subtract"
+        previousO = currentV.innerText
+        currentV.innerText = null
+        buffer.innerText = buffer.innerText + previousO + e.target.value
+        setLastChar(e.target.value)
+    } else if (e.target.value === "/") {
+        operator = "divide"
+        previousO = currentV.innerText
+        currentV.innerText = null
+        buffer.innerText = buffer.innerText + previousO + e.target.value
+        setLastChar(e.target.value)
+    } else if (e.target.value === "*") {
+        operator = "multiply"
+        previousO = currentV.innerText
+        currentV.innerText = null
+        buffer.innerText = buffer.innerText + previousO + e.target.value
+        setLastChar(e.target.value)
+    }
+}
+
+for (let i = 0; i < operatorsBtns.length; i++) {
+    operatorsBtns[i].addEventListener("click", handleOperation)
 }
 
 //equal functionality
-let equalBtn = document.getElementById("equal__op");
-equalBtn.addEventListener("click", (e) => {
+function handleEqual(e) {
     e.preventDefault()
     switch (operator) {
         case "add":
@@ -88,8 +102,12 @@ equalBtn.addEventListener("click", (e) => {
             buffer.innerText = null
             setLastChar(null)
             break;
+
     }
-})
+}
+
+let equalBtn = document.getElementById("equal__op");
+equalBtn.addEventListener("click", handleEqual)
 
 //delete one digit functionality //F 
 deleteone_op.addEventListener("click", (e) => {
@@ -108,7 +126,6 @@ clearAll__op.addEventListener("click", (e) => {
 //clear current input functionality C //F
 clearInput__op.addEventListener("click", (e) => {
     e.preventDefault()
-
     currentV.innerText = null
 })
 
