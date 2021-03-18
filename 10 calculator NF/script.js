@@ -14,12 +14,14 @@ for (let i = 0; i < numberBtns.length; i++) {
     currentV.innerText += e.target.value;
   });
 }
-// pushes current value and the operator to the array, sets current val to null, displays buffer
+// pushes current value and the operator to the bufferArr, sets current val to null, displays buffer
 function pushCurrAndTargetVupdateDisplay(targetValue) {
-  bufferArr.push(currentV.innerText);
-  bufferArr.push(targetValue);
-  currentV.innerText = null;
-  buffer.innerText = bufferArr.join("");
+  if (currentV.innerText.length !== 0) {
+    bufferArr.push(currentV.innerText);
+    bufferArr.push(targetValue);
+    currentV.innerText = null;
+    buffer.innerText = bufferArr.join("")
+  }
 }
 
 //operators buttons functionality
@@ -109,17 +111,16 @@ decimal__op.addEventListener("click", (e) => {
   }
 });
 
-//function recursively calculates  + || -
+//function recursively calculates  + || - operations
 function calcAddSubtract(array) {
   let arr = array;
+  //Base case - checks if an array contains  + || -
   if (arr.some((e) => /[+-]/.test(e)) === false || arr.length == 1) {
     return array;
   }
   for (let i = 0; i < arr.length - 1; i++) {
     if (arr[i] == "+") {
-      let res = parseFloat(Number(arr[i - 1]) + Number(arr[i + 1])).toPrecision(
-        12
-      );
+      let res = parseFloat(Number(arr[i - 1]) + Number(arr[i + 1])).toFixed(2);
       arr.splice(i - 1, 3, res);
     } else if (arr[i] == "-") {
       let res = Number(arr[i - 1]) - Number(arr[i + 1]);
@@ -128,15 +129,17 @@ function calcAddSubtract(array) {
   }
   return calcAddSubtract(arr);
 }
-// function recursively calculates  * || /
+
+// function recursively calculates  * || / operations
 function calcMultiplyDivide(array) {
   let arr = array;
+  //Base case - checks if an array contains  * || /
   if (arr.some((e) => /[/*]/.test(e)) === false) {
     return array;
   }
   for (let i = 0; i < arr.length - 1; i++) {
     if (arr[i] == "/") {
-      let res = (Number(arr[i - 1]) / Number(arr[i + 1])).toFixed(8);
+      let res = (Number(arr[i - 1]) / Number(arr[i + 1])).toFixed(4);
       arr.splice(i - 1, 3, res);
     } else if (arr[i] == "*") {
       let res = parseFloat(Number(arr[i - 1]) * Number(arr[i + 1])).toPrecision(

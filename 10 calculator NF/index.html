@@ -31,10 +31,14 @@
 
     <div class="container keyboard">
       <div class="row">
-        <div class="col-sm"><button class="btn__operators button " id="deleteone_op" value="←"> ←</button></div>
-        <div class="col-sm"><button class="btn__operators button" id="clearAll__op" value="CE"> CE</button></div>
-        <div class="col-sm"><button class="btn__operators button" id="clearInput__op" value="C"> C</button></div>
-        <div class="col-sm"><button class="btn__operators button" id="negateCurrOperand__op" value="+/-"> +/-</button>
+        <div class="col-sm"><button class="btn__operators button btn-warning " id="deleteone_op" value="←"> ←</button>
+        </div>
+        <div class="col-sm"><button class="btn__operators button btn-warning" id="clearAll__op" value="CE"> CE</button>
+        </div>
+        <div class="col-sm"><button class="btn__operators button btn-warning" id="clearInput__op" value="C"> C</button>
+        </div>
+        <div class="col-sm"><button class="btn__operators button negate" id="negateCurrOperand__op" value="+/-">
+            +/-</button>
         </div>
       </div>
       <div class="row">
@@ -56,7 +60,7 @@
         <div class="col-sm"><button class="btn__operators button" value="-"> -</button></div>
       </div>
       <div class="row">
-        <div class="col-sm"><button class="btn__operators button" id="equal__op" value="="> =</button></div>
+        <div class="col-sm"><button class="btn__operators button btn-primary" id="equal__op" value="="> =</button></div>
         <div class="col-sm"><button class="btn__numbers button" value="0"> 0</button></div>
         <div class="col-sm"><button class="btn__operators button" id="decimal__op" value="."> .</button></div>
         <div class="col-sm"><button class="btn__operators button" value="+"> +</button></div>

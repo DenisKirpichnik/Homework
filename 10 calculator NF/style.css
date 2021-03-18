@@ -54,3 +54,11 @@
 .display {
   background-color: white;
 }
+
+.keyboard {
+  margin-left: 13px !important;
+}
+
+.negate {
+  margin-left: -8px !important;
+}
