@@ -2,11 +2,15 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .timeinput {
     display: flex;
     flex-direction: row;
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .timeinput span {
@@ -15,4 +19,39 @@
 
 span input {
     margin-right: 5px;
+}
+
+.table_cell {
+    width: 50px;
+    height: 50px;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.output {
+    width: 120px;
+
+}
+
+.outputContainer {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.timetable {
+    width: 50%;
+    margin: 0 auto;
+
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    background: none;
+    display: none;
 }

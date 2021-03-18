@@ -6,7 +6,7 @@ function validateNumber(number) {
   }
 }
 
-console.log(validateNumber("A011AA01")); // B234TE161 - valid
+console.log(validateNumber("B234TE161")); // B234TE161 - valid
 
 /*
 Российские автомобильные номера имеют следующий формат: 
