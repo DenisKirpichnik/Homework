@@ -1,12 +1,8 @@
-function validateNumber(number) {
-  if (number.length === 8) {
-    return /^[ABEKMHOPCTYX]{1}[\d]{3}[ABEKMHOPCTYX]{2}[\d]{2}$/.test(number);
-  } else {
-    return /^[ABEKMHOPCTYX]{1}[\d]{3}[ABEKMHOPCTYX]{2}[\d]{3}$/.test(number);
-  }
+function validateString(string) {
+  return /^[ABEKMHOPCTYX]{1}[\d]{3}[ABEKMHOPCTYX]{2}[\d]{2,3}$/.test(string);
 }
 
-console.log(validateNumber("B234TE161")); // B234TE161 - valid
+console.log(validateString("B234TE161")); // B234TE161 - valid
 
 /*
 Российские автомобильные номера имеют следующий формат: 
