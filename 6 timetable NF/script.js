@@ -5,10 +5,11 @@ let output = document.getElementById("output");
 
 
 // getting the full date today in the most optimal way)
-let year = new Date().getFullYear()
-let month = new Date().getMonth()
-let day = new Date().getDate()
-let fulldate = `${year}-${month+1}-${day}`
+const date = new Date()
+const year = date.getFullYear()
+const month = date.getMonth()
+const day = date.getDate()
+const fulldate = `${year}-${month+1}-${day}`
 
 // gets the timeStamps for today for all hours
 function getTimeStampForToday(time) {
